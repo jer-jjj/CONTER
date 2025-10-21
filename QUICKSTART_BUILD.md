@@ -1,10 +1,24 @@
 # 快速打包指南
 
-## 一键打包（推荐）
+## 📦 选择打包方式
 
-在项目根目录运行：
+### 方式一：生成安装器（推荐）
+
+生成专业的 Windows 安装程序，支持选择安装位置、创建桌面图标、自带卸载器。
 
 ```powershell
+# 完整构建（打包 + 安装器）
+powershell -ExecutionPolicy Bypass -File .\build_installer.ps1
+```
+
+**前置要求**：安装 Inno Setup 6.0+（https://jrsoftware.org/isdl.php）
+
+### 方式二：便携版（仅打包）
+
+生成可直接运行的便携版，不需要安装。
+
+```powershell
+# 仅打包应用
 powershell -ExecutionPolicy Bypass -File .\build.ps1
 ```
 
