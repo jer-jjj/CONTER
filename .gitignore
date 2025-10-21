@@ -1,0 +1,39 @@
+# Python虚拟环境
+.venv/
+venv/
+env/
+
+# Python缓存文件
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# 数据文件
+data/
+*.json
+!README.json
+!package.json
+
+# Excel文件
+*.xlsx
+*.xls
+!示例名单.xlsx
+
+# IDE配置
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 操作系统文件
+.DS_Store
+Thumbs.db
+
+# 日志文件
+*.log
+
+# 构建文件
+build/
+dist/
+*.egg-info/
