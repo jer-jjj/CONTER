@@ -37,4 +37,4 @@ Thumbs.db
 build/
 dist/
 *.egg-info/
-installer_outputs
+installer_output/
