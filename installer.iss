@@ -75,9 +75,7 @@ Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescrip
 Source: "dist\CONTER\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; 文档文件
 Source: "README.md"; DestDir: "{app}"; Flags: ignoreversion
-Source: "USER_GUIDE.md"; DestDir: "{app}"; Flags: ignoreversion
-Source: "DATA_STORAGE.md"; DestDir: "{app}"; Flags: ignoreversion
-Source: "CHANGELOG.md"; DestDir: "{app}"; Flags: ignoreversion
+
 
 [Icons]
 ; 开始菜单图标
