@@ -90,6 +90,15 @@ class PickResultCard(ft.Container):
             self.opacity = 0
 
 
+def _create_stat_row(label: str, value: str, icon):
+    return ft.Row([
+        ft.Icon(icon, color=ft.Colors.PRIMARY),
+        ft.Text(f"{label}:", size=16),
+        ft.Container(expand=True),
+        ft.Text(value, size=16, weight=ft.FontWeight.BOLD, color=ft.Colors.BLUE_GREY),
+    ])
+
+
 class StatisticsPanel(ft.Container):
     """Statistics panel"""
     
@@ -103,10 +112,10 @@ class StatisticsPanel(ft.Container):
         content = ft.Column([
             ft.Text(stats_title, size=24, weight=ft.FontWeight.BOLD),
             ft.Divider(),
-            self._create_stat_row(total_label, str(stats.get('total_students', 0)), ft.Icons.PEOPLE),
-            self._create_stat_row(picked_label, str(stats.get('picked_count', 0)), ft.Icons.CHECK_CIRCLE),
-            self._create_stat_row(unpicked_label, str(stats.get('unpicked_count', 0)), ft.Icons.RADIO_BUTTON_UNCHECKED),
-            self._create_stat_row(total_picks_label, str(stats.get('total_picks', 0)), ft.Icons.NUMBERS),
+            _create_stat_row(total_label, str(stats.get('total_students', 0)), ft.Icons.PEOPLE),
+            _create_stat_row(picked_label, str(stats.get('picked_count', 0)), ft.Icons.CHECK_CIRCLE),
+            _create_stat_row(unpicked_label, str(stats.get('unpicked_count', 0)), ft.Icons.RADIO_BUTTON_UNCHECKED),
+            _create_stat_row(total_picks_label, str(stats.get('total_picks', 0)), ft.Icons.NUMBERS),
         ], spacing=15)
         
         super().__init__(
@@ -116,11 +125,3 @@ class StatisticsPanel(ft.Container):
             bgcolor=ft.Colors.SURFACE,
             border=ft.border.all(2, ft.Colors.PRIMARY),
         )
-    
-    def _create_stat_row(self, label: str, value: str, icon):
-        return ft.Row([
-            ft.Icon(icon, color=ft.Colors.PRIMARY),
-            ft.Text(f"{label}:", size=16),
-            ft.Container(expand=True),
-            ft.Text(value, size=16, weight=ft.FontWeight.BOLD, color=ft.Colors.BLUE_GREY),
-        ])

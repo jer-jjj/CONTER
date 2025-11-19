@@ -3,11 +3,10 @@
 Business logic services
 """
 import random
-from typing import List, Optional
+from typing import List
 from datetime import datetime
 import asyncio
 from models import Student, PickRecord, DataManager
-import openpyxl
 import pandas as pd
 
 
@@ -94,7 +93,7 @@ class PickerService:
     
     async def pick_least_picked(self, count: int = 1) -> List[Student]:
         """
-        Pick students with least pick count
+        Pick students with the least pick count
         :param count: Number of students to pick
         """
         await asyncio.sleep(0.01)
